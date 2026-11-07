@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --ink: #1d2925;
+  --ink-2: #33423b;
+  --muted: #7b8980;
+  --line: #e5e4da;
+  --paper: #fbfaf5;
+  --paper-2: #f3f0e6;
+  --white: #fffefa;
+  --coral: #ef6b4b;
+  --coral-dark: #d94f35;
+  --gold: #e8b64d;
+  --sage: #6d8b72;
+  --mint: #dce9dc;
+  --pale-coral: #fae4dc;
+  --dark: #17221e;
+  --radius: 18px;
+  --shadow: 0 18px 55px rgba(32, 45, 38, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: #e9e8df;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
+/* Animations from wireframe */
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-5deg) translateY(18px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes plateFloat {
+  0%, 100% {
+    transform: rotateX(58deg) rotateZ(-23deg) translateY(0);
+  }
+  50% {
+    transform: rotateX(58deg) rotateZ(-23deg) translateY(-13px);
+  }
+}
+
+@keyframes plateFloatMobile {
+  0%, 100% {
+    transform: scale(0.82) rotateX(58deg) rotateZ(-23deg) translateY(0);
+  }
+  50% {
+    transform: scale(0.82) rotateX(58deg) rotateZ(-23deg) translateY(-10px);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(336deg);
+  }
+}
+
+@keyframes floatTag {
+  0%, 100% {
+    transform: translateY(0) translateZ(20px);
+  }
+  50% {
+    transform: translateY(-11px) translateZ(40px);
+  }
+}
+
+@keyframes cartPulse {
+  0%, 100% {
+    box-shadow: 0 14px 35px rgba(20, 35, 29, 0.22);
+  }
+  50% {
+    box-shadow: 0 17px 40px rgba(239, 107, 75, 0.28);
+  }
+}
+
+@keyframes dishHover {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+@keyframes currentPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(250, 231, 224, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(250, 231, 224, 0.35);
+  }
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes floorDrift {
+  to {
+    transform: rotateX(57deg) rotateZ(-28deg) translateY(-8px);
+  }
+}
+
+@keyframes tableBob {
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+.animate-plate {
+  animation: plateFloat 6s ease-in-out infinite;
+}
+
+.animate-plate-mobile {
+  animation: plateFloatMobile 6s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 18s linear infinite;
+}
+
+.animate-float-tag {
+  animation: floatTag 4.5s ease-in-out infinite;
+}
+
+.animate-cart-pulse {
+  animation: cartPulse 3s ease-in-out infinite;
+}
+
+.animate-dish-hover {
+  animation: dishHover 4s ease-in-out infinite;
+}
+
+.animate-current-pulse {
+  animation: currentPulse 2s infinite;
+}
+
+.animate-floor-drift {
+  animation: floorDrift 12s ease-in-out infinite alternate;
+}
+
+.animate-table-bob {
+  animation: tableBob 4s ease-in-out infinite;
+}
+
+.animate-screen-in {
+  animation: screenIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
